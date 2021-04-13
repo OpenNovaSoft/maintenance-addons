@@ -1,2 +1,3 @@
-
-
+maintenance_equipment_specs_import/wizards/__pycache__/*.pyc
+maintenance_equipment_specs_import/__pycache__/*.pyc
+maintenance_equipment_specs_import/models/__pycache__/*.pyc

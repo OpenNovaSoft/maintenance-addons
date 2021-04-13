@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2021 openNova - Juan Pablo Garza <juanp@opennova.com.ar>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="specs_import_wizard" model="ir.ui.view">
+        <field name="name">Importación de especificaciones de equipamiento</field>
+        <field name="model">specs.import.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="xml_file" filename="file_name"/>
+                        <field name="file_name" invisible="1"/>                    
+                    </group>
+                </group>
+                <footer>
+                    <button type="object" name="do_import"
+                    string="Aceptar" class="oe_highlight" />
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_specs_import_wizard" model="ir.actions.act_window">
+        <field name="name">Importación de especificaciones de equipamiento</field>
+        <field name="res_model">specs.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="specs_import_wizard"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="maintenance.model_maintenance_equipment" />
+    </record>
+
+</odoo>
